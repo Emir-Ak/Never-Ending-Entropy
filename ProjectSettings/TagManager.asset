@@ -8,6 +8,7 @@ TagManager:
   - Chaser
   - PlayerLight
   - Bullet
+  - BossOrb
   layers:
   - Default
   - TransparentFX
@@ -18,8 +19,8 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
+  - Enemy Collider
+  - Player
   - 
   - 
   - 

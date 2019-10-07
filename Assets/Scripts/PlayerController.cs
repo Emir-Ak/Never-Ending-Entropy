@@ -67,11 +67,30 @@ public class PlayerController : MonoBehaviour
         Rotate();
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="rayDistance"></param>
+    /// <param name="direction"></param>
+    /// <param name="layerMaskToCheckAgainst"> Layer you want to detect</param>
+    /// <returns></returns>
+    bool CheckShit(float rayDistance,Vector2 direction,int layerMaskToCheckAgainst)
+    {
+        RaycastHit2D ray = Physics2D.Raycast(transform.position,direction,rayDistance,layerMaskToCheckAgainst);
+        if (ray)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
     void Shoot()
     {
         GameObject bullet = Instantiate(bulletPrefab, firingPos.position, firingPos.rotation);
-        bullet.GetComponentInChildren<Rigidbody2D>().AddForce(firingPos.up * bulletSpeed, ForceMode2D.Impulse);
+        bullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed;
     }
 
     void GetInput()
@@ -94,7 +113,7 @@ public class PlayerController : MonoBehaviour
         rb.rotation = angle;
     }
 
-    public void GetDamage(float damage)
+    public void ReceiveDamage(float damage)
     {
         if (!isInvulnerable)
         {
