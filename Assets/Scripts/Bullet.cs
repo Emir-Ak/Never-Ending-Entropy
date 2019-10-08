@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -11,9 +12,22 @@ public class Bullet : MonoBehaviour
 
     public float damage = 10f;
     public float destroyDelay;
+    public Rigidbody2D rb;
+    public float bulletSpeed;
+
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
     private void Start()
     {
         Destroy(gameObject, destroyDelay);
+        rb.AddForce(bulletSpeed * transform.up,ForceMode2D.Impulse);
+    }
+
+    private void Update()
+    {
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -27,10 +41,14 @@ public class Bullet : MonoBehaviour
                 if (collision.CompareTag("Chaser"))
                 {
                     Chaser chaser = collision.GetComponent<Chaser>();
-                        if (chaser.toAppear == false) 
+                    if (chaser.toAppear == false)
                         chaser.toAppear = true;
 
                     chaser.GetDamage(damage, transform.position);
+                }
+                else if (collision.gameObject.CompareTag("BossOrb"))
+                {
+                    collision.gameObject.GetComponent<BossOrb>().DamageOrb(damage);
                 }
 
                 foreach (Component obj in toDisable)

@@ -31,7 +31,6 @@ public class Chaser : MonoBehaviour
         initialSpeed = moveSpeed;
     }
       
-
     private void Update()
     {
         if (animator.speed != moveSpeed / initialSpeed)
@@ -49,7 +48,6 @@ public class Chaser : MonoBehaviour
             animator.SetBool("toAppear", true);
         
         }
-       
 
         if (Vector2.Distance(target.position, transform.position) > followRange && toFollow == true)
         {
@@ -107,7 +105,7 @@ public class Chaser : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") && !hasAttacked && gameController.timeActive)
         {
             PlayerController player = target.GetComponent<PlayerController>();
-            player.GetDamage(15f);
+            player.ReceiveDamage(15f);
             Invoke("ResetAttack", 0.25f);
             hasAttacked = true;
             moveDir = (target.transform.position - transform.position)* -1;
