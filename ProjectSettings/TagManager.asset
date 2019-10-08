@@ -8,6 +8,8 @@ TagManager:
   - Chaser
   - PlayerLight
   - Bullet
+  - BossOrb
+  - Hive
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - 
   - PostProcessing
   - Obstacles
-  - 
+  - Enemy projectiles
   - 
   - 
   - 

@@ -3,6 +3,10 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - BarScript
     - BlackHole
+    - BossAI
+    - BossBullet
+    - BossHomingBullet
+    - BossOrb
     - Bullet
     - Chaser
     - Door
@@ -45,6 +49,7 @@ ScriptsOnlyBuild:
     - UnityEngine.Experimental.Rendering.LWRP.Light2D
     - UnityEngine.Experimental.Rendering.LWRP.Renderer2DData
     - UnityEngine.Rendering.LWRP.LightweightRenderPipelineAsset
+    - UnityEngine.Rendering.LWRP.LightweightRenderPipelineEditorResources
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
@@ -112,83 +117,91 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 9802}
+      Script: {instanceID: 9806}
     - Class: 114
-      Script: {instanceID: 9832}
+      Script: {instanceID: 9836}
     - Class: 114
-      Script: {instanceID: 9854}
+      Script: {instanceID: 9858}
     - Class: 114
-      Script: {instanceID: 9866}
+      Script: {instanceID: 9870}
     - Class: 114
-      Script: {instanceID: 9872}
+      Script: {instanceID: 9876}
     - Class: 114
-      Script: {instanceID: 9990}
+      Script: {instanceID: 9994}
     - Class: 114
-      Script: {instanceID: 10032}
+      Script: {instanceID: 10036}
     - Class: 114
-      Script: {instanceID: 10258}
+      Script: {instanceID: 10262}
     - Class: 114
-      Script: {instanceID: 10364}
+      Script: {instanceID: 10368}
     - Class: 114
-      Script: {instanceID: 10458}
+      Script: {instanceID: 10462}
     - Class: 114
-      Script: {instanceID: 10514}
+      Script: {instanceID: 10518}
     - Class: 114
-      Script: {instanceID: 10586}
+      Script: {instanceID: 10590}
     - Class: 114
-      Script: {instanceID: 10930}
+      Script: {instanceID: 10934}
     - Class: 114
-      Script: {instanceID: 10952}
+      Script: {instanceID: 10956}
     - Class: 114
-      Script: {instanceID: 11008}
-    - Class: 114
-      Script: {instanceID: 11056}
+      Script: {instanceID: 11012}
     - Class: 114
       Script: {instanceID: 11060}
     - Class: 114
-      Script: {instanceID: 11088}
+      Script: {instanceID: 11064}
     - Class: 114
-      Script: {instanceID: 11220}
+      Script: {instanceID: 11092}
     - Class: 114
-      Script: {instanceID: 11546}
+      Script: {instanceID: 11224}
     - Class: 114
-      Script: {instanceID: 11612}
+      Script: {instanceID: 11550}
     - Class: 114
-      Script: {instanceID: 11794}
+      Script: {instanceID: 11616}
     - Class: 114
-      Script: {instanceID: 12176}
+      Script: {instanceID: 11798}
     - Class: 114
-      Script: {instanceID: 12198}
+      Script: {instanceID: 12180}
     - Class: 114
-      Script: {instanceID: 12284}
+      Script: {instanceID: 12202}
     - Class: 114
-      Script: {instanceID: 12314}
+      Script: {instanceID: 12288}
     - Class: 114
-      Script: {instanceID: 12538}
+      Script: {instanceID: 12318}
     - Class: 114
-      Script: {instanceID: 12584}
+      Script: {instanceID: 12542}
     - Class: 114
-      Script: {instanceID: 12660}
+      Script: {instanceID: 12588}
     - Class: 114
-      Script: {instanceID: 12788}
+      Script: {instanceID: 12664}
     - Class: 114
-      Script: {instanceID: 12906}
+      Script: {instanceID: 12792}
     - Class: 114
-      Script: {instanceID: 12978}
+      Script: {instanceID: 12910}
     - Class: 114
-      Script: {instanceID: 13002}
+      Script: {instanceID: 12982}
     - Class: 114
-      Script: {instanceID: 13144}
+      Script: {instanceID: 13006}
     - Class: 114
-      Script: {instanceID: 13168}
+      Script: {instanceID: 13148}
     - Class: 114
-      Script: {instanceID: 13204}
+      Script: {instanceID: 13172}
     - Class: 114
-      Script: {instanceID: 13306}
+      Script: {instanceID: 13208}
     - Class: 114
-      Script: {instanceID: 13348}
+      Script: {instanceID: 13310}
     - Class: 114
-      Script: {instanceID: 13426}
+      Script: {instanceID: 13352}
+    - Class: 114
+      Script: {instanceID: 13430}
+    - Class: 114
+      Script: {instanceID: 28276}
+    - Class: 114
+      Script: {instanceID: 28278}
+    - Class: 114
+      Script: {instanceID: 28280}
+    - Class: 114
+      Script: {instanceID: 28282}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -880,7 +893,7 @@ ScriptsOnlyBuild:
     className: TimelineAsset
   - hash:
       serializedVersion: 2
-      Hash: 25d12e28d4b89d9836644f3308f10d6a
+      Hash: daea634b36e7eea9f5b7d02dcbe1211c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Bullet
@@ -1148,6 +1161,36 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PickedUpItemReaction
+  - hash:
+      serializedVersion: 2
+      Hash: d1d822d1291e2758b2af34ef931d0fc8
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Space
+  - hash:
+      serializedVersion: 2
+      Hash: 8b2c1539ecc085fcd56693f250c8ce07
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BossAI
+  - hash:
+      serializedVersion: 2
+      Hash: 7c988f50d48269bc0092a21ac1a0cbcf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BossHomingBullet
+  - hash:
+      serializedVersion: 2
+      Hash: c0e2ab9a03655452a934ad522ba67a71
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BossOrb
+  - hash:
+      serializedVersion: 2
+      Hash: daea634b36e7eea9f5b7d02dcbe1211c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BossBullet
   platform: 19
   scenePathNames:
   - Assets/Scenes/World 1.unity

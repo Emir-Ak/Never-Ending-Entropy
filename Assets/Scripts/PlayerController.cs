@@ -41,7 +41,6 @@ public class PlayerController : MonoBehaviour
     GameObject triggerField;
 
     bool isShooting = false;
-    bool isInvulnerable = false;
     bool isRegenerating = false;
     public bool hasWeapon = false;
     public bool hasLight = false;
@@ -151,23 +150,14 @@ public class PlayerController : MonoBehaviour
         rb.rotation = angle;
     }
 
-    public void GetDamage(float damage)
+    public void ReceiveDamage(float damage)
     {
-        if (!isInvulnerable)
-        {
-            currentHealth -= damage;
-            isInvulnerable = true;
-            Invoke("ResetVulnerability", 0.35f);
-            Debug.Log(currentHealth);
-            barCurrentHealth.CurrentVal = currentHealth;
-            barValueText.text = ((int)currentHealth).ToString();
-        }
+        currentHealth -= damage;
+        Debug.Log(currentHealth);
+        barCurrentHealth.CurrentVal = currentHealth;
+        barValueText.text = ((int)currentHealth).ToString();
     }
 
-    void ResetVulnerability()
-    {
-        isInvulnerable = false;
-    }
 
     private IEnumerator Regenerate(float delay, float regenAmount)
     {

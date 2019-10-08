@@ -107,7 +107,7 @@ public class Chaser : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") && !hasAttacked && gameController.timeActive)
         {
             PlayerController player = target.GetComponent<PlayerController>();
-            player.GetDamage(15f);
+            player.ReceiveDamage(15f);
             Invoke("ResetAttack", 0.25f);
             hasAttacked = true;
             moveDir = (target.transform.position - transform.position)* -1;

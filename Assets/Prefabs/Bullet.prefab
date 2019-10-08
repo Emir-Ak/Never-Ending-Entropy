@@ -4983,8 +4983,10 @@ MonoBehaviour:
   - {fileID: 4824489333453899475}
   explosion: {fileID: 6509219267168621504, guid: 9758a1ede37956942bfd4d18f949456f,
     type: 3}
-  damage: 50
+  damage: 35
   destroyDelay: 2.5
+  rb: {fileID: 0}
+  bulletSpeed: 0
 --- !u!58 &7967172778169106398
 CircleCollider2D:
   m_ObjectHideFlags: 0
