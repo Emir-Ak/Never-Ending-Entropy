@@ -1,15 +1,18 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - BarScript
+    - BlackHole
     - Bullet
     - Chaser
     - Door
+    - FilterManager
+    - GameController
     - Hive
-    - Inventory
     - Light
+    - Module
     - PauseMenu
     - PlayerController
-    - Space
     - UIManager
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
@@ -42,9 +45,6 @@ ScriptsOnlyBuild:
     - UnityEngine.Experimental.Rendering.LWRP.Light2D
     - UnityEngine.Experimental.Rendering.LWRP.Renderer2DData
     - UnityEngine.Rendering.LWRP.LightweightRenderPipelineAsset
-    - UnityEngine.Rendering.LWRP.LightweightRenderPipelineEditorResources
-    Unity.TextMeshPro.Editor.dll:
-    - TMPro.EditorUtilities.TMPro_FontAssetCreatorWindow
     Unity.TextMeshPro.dll:
     - TMPro.TMP_FontAsset
     - TMPro.TMP_Settings
@@ -54,10 +54,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -68,7 +66,6 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
-    - UnityEngine.UI.HorizontalLayoutGroup
     - UnityEngine.UI.Image
   sceneClasses:
     Assets/Scenes/World 1.unity:
@@ -125,69 +122,73 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9872}
     - Class: 114
-      Script: {instanceID: 9986}
+      Script: {instanceID: 9990}
     - Class: 114
-      Script: {instanceID: 10028}
+      Script: {instanceID: 10032}
     - Class: 114
-      Script: {instanceID: 10252}
+      Script: {instanceID: 10258}
     - Class: 114
-      Script: {instanceID: 10358}
+      Script: {instanceID: 10364}
     - Class: 114
-      Script: {instanceID: 10452}
+      Script: {instanceID: 10458}
     - Class: 114
-      Script: {instanceID: 10508}
+      Script: {instanceID: 10514}
     - Class: 114
-      Script: {instanceID: 10920}
+      Script: {instanceID: 10586}
     - Class: 114
-      Script: {instanceID: 10942}
+      Script: {instanceID: 10930}
     - Class: 114
-      Script: {instanceID: 10998}
+      Script: {instanceID: 10952}
     - Class: 114
-      Script: {instanceID: 11048}
+      Script: {instanceID: 11008}
     - Class: 114
-      Script: {instanceID: 11076}
+      Script: {instanceID: 11056}
     - Class: 114
-      Script: {instanceID: 11208}
+      Script: {instanceID: 11060}
     - Class: 114
-      Script: {instanceID: 11410}
+      Script: {instanceID: 11088}
     - Class: 114
-      Script: {instanceID: 11534}
+      Script: {instanceID: 11220}
     - Class: 114
-      Script: {instanceID: 11600}
+      Script: {instanceID: 11546}
     - Class: 114
-      Script: {instanceID: 11782}
+      Script: {instanceID: 11612}
     - Class: 114
-      Script: {instanceID: 12160}
+      Script: {instanceID: 11794}
     - Class: 114
-      Script: {instanceID: 12164}
+      Script: {instanceID: 12176}
     - Class: 114
-      Script: {instanceID: 12186}
+      Script: {instanceID: 12198}
     - Class: 114
-      Script: {instanceID: 12272}
+      Script: {instanceID: 12284}
     - Class: 114
-      Script: {instanceID: 12302}
+      Script: {instanceID: 12314}
     - Class: 114
-      Script: {instanceID: 12526}
+      Script: {instanceID: 12538}
     - Class: 114
-      Script: {instanceID: 12572}
+      Script: {instanceID: 12584}
     - Class: 114
-      Script: {instanceID: 12648}
+      Script: {instanceID: 12660}
     - Class: 114
-      Script: {instanceID: 12892}
+      Script: {instanceID: 12788}
     - Class: 114
-      Script: {instanceID: 12964}
+      Script: {instanceID: 12906}
     - Class: 114
-      Script: {instanceID: 13128}
+      Script: {instanceID: 12978}
     - Class: 114
-      Script: {instanceID: 13152}
+      Script: {instanceID: 13002}
     - Class: 114
-      Script: {instanceID: 13188}
+      Script: {instanceID: 13144}
     - Class: 114
-      Script: {instanceID: 13290}
+      Script: {instanceID: 13168}
     - Class: 114
-      Script: {instanceID: 13332}
+      Script: {instanceID: 13204}
     - Class: 114
-      Script: {instanceID: 13410}
+      Script: {instanceID: 13306}
+    - Class: 114
+      Script: {instanceID: 13348}
+    - Class: 114
+      Script: {instanceID: 13426}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -225,7 +226,7 @@ ScriptsOnlyBuild:
     className: CanvasScaler
   - hash:
       serializedVersion: 2
-      Hash: ea26437e5a492ac9dd9118937df6bc7c
+      Hash: aa82678f1479ab3e996e1ad3204d9dba
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: UIManager
@@ -267,13 +268,19 @@ ScriptsOnlyBuild:
     className: AudioPlayableAsset
   - hash:
       serializedVersion: 2
+      Hash: 66056c2209ff8e6b238f8b056c7eb331
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AudioManager
+  - hash:
+      serializedVersion: 2
       Hash: 626925ef558787b2d85c809198164d19
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
-      Hash: a4c4cfa7b83f5c233dfcbb3d21e0d07c
+      Hash: cb662600560a7af097152bbc2e04d8cf
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Chaser
@@ -387,7 +394,7 @@ ScriptsOnlyBuild:
     className: GridLayoutGroup
   - hash:
       serializedVersion: 2
-      Hash: 684f9900fe47ecaa7a6a7ce6cc447209
+      Hash: ea281ef85ed855250129e564b7194241
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -447,10 +454,22 @@ ScriptsOnlyBuild:
     className: Vignette
   - hash:
       serializedVersion: 2
+      Hash: b3361c88383107be3c482e11ab0a17a6
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: AfterImage
+  - hash:
+      serializedVersion: 2
       Hash: bd3cf68c8964d3c66d1c43f4f98508c9
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: AnimationTrack
+  - hash:
+      serializedVersion: 2
+      Hash: db587632944a996aa3af9ba0b485c83c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BarScript
   - hash:
       serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
@@ -525,10 +544,10 @@ ScriptsOnlyBuild:
     className: Light
   - hash:
       serializedVersion: 2
-      Hash: d1d822d1291e2758b2af34ef931d0fc8
+      Hash: 14594569f955c88eb058ffd6be91048e
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Space
+    className: Module
   - hash:
       serializedVersion: 2
       Hash: 7e6ed836cbaa230e56d6a2bbae1b9bb5
@@ -553,6 +572,12 @@ ScriptsOnlyBuild:
     assemblyName: Cinemachine.dll
     namespaceName: 
     className: CinemachineTrack
+  - hash:
+      serializedVersion: 2
+      Hash: a09fa9fb75f7b8bd345754c397c93e9c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FilterManager
   - hash:
       serializedVersion: 2
       Hash: b8a5e8091ab0b8861d2add371082c5e0
@@ -939,7 +964,13 @@ ScriptsOnlyBuild:
     className: CinemachineHardLookAt
   - hash:
       serializedVersion: 2
-      Hash: ab9065b47c3259bf0ba972635a5001e4
+      Hash: bb8814741d7085ebb3d19a1a11769619
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: BlackHole
+  - hash:
+      serializedVersion: 2
+      Hash: 82343cc6b83083ad0fef06231c6f70bf
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: Door
@@ -955,6 +986,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
     className: TMP_StyleSheet
+  - hash:
+      serializedVersion: 2
+      Hash: 338b69e99e2aacd981252afbe5c6b28c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: GameController
   - hash:
       serializedVersion: 2
       Hash: d5630f96bd5a6a6eed7e1754c3fb8703

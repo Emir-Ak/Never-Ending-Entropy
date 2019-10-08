@@ -63,19 +63,28 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scenes\AudioManager.cs" />
+    <Compile Include="Assets\Scenes\Sound.cs" />
+    <Compile Include="Assets\Scripts\AfterImage.cs" />
+    <Compile Include="Assets\Scripts\AZAnim.cs" />
+    <Compile Include="Assets\Scripts\Bar\BarScript.cs" />
+    <Compile Include="Assets\Scripts\Bar\Stat.cs" />
+    <Compile Include="Assets\Scripts\BlackHole.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\Scripts\Chaser.cs" />
     <Compile Include="Assets\Scripts\DelayDestroy.cs" />
     <Compile Include="Assets\Scripts\Door.cs" />
+    <Compile Include="Assets\Scripts\FilterManager.cs" />
+    <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\Hive.cs" />
     <Compile Include="Assets\Scripts\InteractionController.cs" />
     <Compile Include="Assets\Scripts\Inventory.cs" />
     <Compile Include="Assets\Scripts\Item.cs" />
     <Compile Include="Assets\Scripts\Light.cs" />
+    <Compile Include="Assets\Scripts\Module.cs" />
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\PickedUpItemReaction.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\Space.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />

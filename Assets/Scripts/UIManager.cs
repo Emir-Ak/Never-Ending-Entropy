@@ -6,6 +6,8 @@ public class UIManager : MonoBehaviour
     GameObject pauseMenu;
     public bool pauseMenuActive = false;
     GameObject pauseMenuInstance;
+    [SerializeField]
+    Transform toEnable;
 
     // Update is called once per frame
     void Update()
@@ -15,7 +17,7 @@ public class UIManager : MonoBehaviour
             if (!pauseMenuActive)
             {
                 Time.timeScale = 0;
-                pauseMenuInstance = Instantiate(pauseMenu, transform);
+                pauseMenuInstance = Instantiate(pauseMenu, toEnable);
                 pauseMenuActive = true;
             }
             else
