@@ -120,7 +120,6 @@ public class PlayerController : MonoBehaviour
             currentHealth -= damage;
             isInvulnerable = true;
             Invoke("ResetVulnerability", 0.35f);
-            Debug.Log(currentHealth);
         }
     }
 

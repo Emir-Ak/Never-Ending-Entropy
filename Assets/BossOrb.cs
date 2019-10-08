@@ -13,19 +13,9 @@ public class BossOrb : MonoBehaviour
         bossAI = GetComponentInParent<BossAI>();
     }
 
-    void Update()
+    public void DamageOrb(float damage)
     {
-        if (orbHealth <= 0)
-        {
-            bossAI.firstStage++;
-
-            bossAI.orbTransforms.Remove(transform);
-            if (bossAI.firstStage > BossAI.FirstStage.ThirdOrbDestroyed)
-            {
-                bossAI.bossStage = BossAI.BossStages.SecondStage;
-            }
-
-            Destroy(gameObject);
-        }
+        bossAI.DamageOrb(damage,transform);
     }
+
 }

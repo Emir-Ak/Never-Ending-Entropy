@@ -27,6 +27,7 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -48,7 +49,7 @@ public class Bullet : MonoBehaviour
                 }
                 else if (collision.gameObject.CompareTag("BossOrb"))
                 {
-                    collision.gameObject.GetComponent<BossOrb>().orbHealth -= damage;
+                    collision.gameObject.GetComponent<BossOrb>().DamageOrb(damage);
                 }
 
                 foreach (Component obj in toDisable)

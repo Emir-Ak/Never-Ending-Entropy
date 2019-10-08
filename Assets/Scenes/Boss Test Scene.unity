@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4fa1c5f7ba922342bcc5a36361e2f9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orbHealth: 10
+  orbHealth: 50
 --- !u!1 &872912897
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,76 +284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4fa1c5f7ba922342bcc5a36361e2f9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orbHealth: 10
---- !u!1001 &1461386242
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3304252729302069840, guid: 2920cadc686249a45a18fc17506385f7,
-        type: 3}
-      propertyPath: m_Name
-      value: Boss Bullet
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304252729302069853, guid: 2920cadc686249a45a18fc17506385f7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 3.2931533
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304252729302069853, guid: 2920cadc686249a45a18fc17506385f7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -1.8943001
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304252729302069853, guid: 2920cadc686249a45a18fc17506385f7,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304252729302069853, guid: 2920cadc686249a45a18fc17506385f7,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304252729302069853, guid: 2920cadc686249a45a18fc17506385f7,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304252729302069853, guid: 2920cadc686249a45a18fc17506385f7,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304252729302069853, guid: 2920cadc686249a45a18fc17506385f7,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304252729302069853, guid: 2920cadc686249a45a18fc17506385f7,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304252729302069853, guid: 2920cadc686249a45a18fc17506385f7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304252729302069853, guid: 2920cadc686249a45a18fc17506385f7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3304252729302069853, guid: 2920cadc686249a45a18fc17506385f7,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 2920cadc686249a45a18fc17506385f7, type: 3}
+  orbHealth: 50
 --- !u!1 &1489197678
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,7 +353,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1499292550 stripped
 GameObject:
@@ -464,7 +395,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4fa1c5f7ba922342bcc5a36361e2f9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orbHealth: 10
+  orbHealth: 50
 --- !u!1 &1876435194 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2488034014696087463, guid: 0af3a46bfc5d8464eb325d9aea25230f,
@@ -505,7 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4fa1c5f7ba922342bcc5a36361e2f9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  orbHealth: 10
+  orbHealth: 50
 --- !u!1001 &2002562094
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -521,12 +452,12 @@ PrefabInstance:
     - target: {fileID: 6353716225384835982, guid: 5eae1d85ff664a448a9ca1b52119c893,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.18
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6353716225384835982, guid: 5eae1d85ff664a448a9ca1b52119c893,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.86
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 6353716225384835982, guid: 5eae1d85ff664a448a9ca1b52119c893,
         type: 3}
@@ -556,7 +487,7 @@ PrefabInstance:
     - target: {fileID: 6353716225384835982, guid: 5eae1d85ff664a448a9ca1b52119c893,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6353716225384835982, guid: 5eae1d85ff664a448a9ca1b52119c893,
         type: 3}
@@ -592,6 +523,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 2488034014533233141, guid: 0af3a46bfc5d8464eb325d9aea25230f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2488034016497737938, guid: 0af3a46bfc5d8464eb325d9aea25230f,
         type: 3}
       propertyPath: m_Layer
@@ -670,7 +606,7 @@ PrefabInstance:
     - target: {fileID: 2488034014533233139, guid: 0af3a46bfc5d8464eb325d9aea25230f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2488034014533233139, guid: 0af3a46bfc5d8464eb325d9aea25230f,
         type: 3}
@@ -755,17 +691,17 @@ PrefabInstance:
     - target: {fileID: 2488034014533233140, guid: 0af3a46bfc5d8464eb325d9aea25230f,
         type: 3}
       propertyPath: firstOrbBulletAmount
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2488034014533233140, guid: 0af3a46bfc5d8464eb325d9aea25230f,
         type: 3}
       propertyPath: secondOrbBulletAmount
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2488034014533233140, guid: 0af3a46bfc5d8464eb325d9aea25230f,
         type: 3}
       propertyPath: thirdOrbBulletAmount
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2488034014533233140, guid: 0af3a46bfc5d8464eb325d9aea25230f,
         type: 3}
@@ -780,7 +716,7 @@ PrefabInstance:
     - target: {fileID: 2488034014533233140, guid: 0af3a46bfc5d8464eb325d9aea25230f,
         type: 3}
       propertyPath: thirdOrbHomingBulletFirerate
-      value: 0.5
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2488034014533233140, guid: 0af3a46bfc5d8464eb325d9aea25230f,
         type: 3}
@@ -811,6 +747,16 @@ PrefabInstance:
         type: 3}
       propertyPath: noOrbBulletAmount
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2488034014533233140, guid: 0af3a46bfc5d8464eb325d9aea25230f,
+        type: 3}
+      propertyPath: maxOrbHealth
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 2488034014533233140, guid: 0af3a46bfc5d8464eb325d9aea25230f,
+        type: 3}
+      propertyPath: currentOrbHealth
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 2488034015006285012, guid: 0af3a46bfc5d8464eb325d9aea25230f,
         type: 3}

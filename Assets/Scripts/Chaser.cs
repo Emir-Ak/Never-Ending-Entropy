@@ -30,7 +30,6 @@ public class Chaser : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
       
-
     private void Update()
     {
         if (!hasAttacked && moveDir != (Vector2)transform.position)
@@ -43,7 +42,6 @@ public class Chaser : MonoBehaviour
         {
             animator.SetBool("toAppear", true);
         }
-       
 
         if (Vector2.Distance(target.position, transform.position) > followRange && toFollow == true)
         {

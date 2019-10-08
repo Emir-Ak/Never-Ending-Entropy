@@ -32,6 +32,11 @@ public class BossAI : MonoBehaviour
 
     [Space]
     [Space]
+    [SerializeField] private float maxOrbHealth;
+    [SerializeField] private float currentOrbHealth;
+
+    [Space]
+    [Space]
 
     [SerializeField] private int secondStageMinionSpawnAmount;
     [SerializeField] private float secondStageMinionSpawnCastTime;
@@ -71,6 +76,7 @@ public class BossAI : MonoBehaviour
      private Vector2 playerPosition;
 
     private float firstStageBulletTimer;
+    private float firstStageHomingBulletTimer;
 
     public enum BossStages
     {
@@ -106,7 +112,7 @@ public class BossAI : MonoBehaviour
 
         firstStageBulletTimer = firstThreeOrbsBulletFirerate;
     }
-
+    
     private void Start()
     {
 
@@ -131,9 +137,10 @@ public class BossAI : MonoBehaviour
                         }
                         else
                         {
+
                             foreach (Transform transform in orbTransforms)
                             {
-                                ShootBullets(noOrbBulletAmount, bulletAngleSpread, transform, firstThreeOrbsBulletFirerate);
+                                ShootBullets(noOrbBulletAmount, bulletAngleSpread, transform, firstStageBulletSpeed);
                             }
 
                             firstStageBulletTimer = firstThreeOrbsBulletFirerate;
@@ -148,9 +155,10 @@ public class BossAI : MonoBehaviour
                         }
                         else
                         {
+
                             foreach (Transform transform in orbTransforms)
                             {
-                                ShootBullets(firstOrbBulletAmount, bulletAngleSpread, transform, firstThreeOrbsBulletFirerate);
+                                ShootBullets(firstOrbBulletAmount, bulletAngleSpread, transform, firstStageBulletSpeed);
                             }
 
                             firstStageBulletTimer = firstThreeOrbsBulletFirerate;
@@ -167,7 +175,7 @@ public class BossAI : MonoBehaviour
                         {
                             foreach (Transform transform in orbTransforms)
                             {
-                                ShootBullets(secondOrbBulletAmount, bulletAngleSpread, transform, firstThreeOrbsBulletFirerate);
+                                ShootBullets(secondOrbBulletAmount, bulletAngleSpread, transform, firstStageBulletSpeed);
                             }
 
                             firstStageBulletTimer = firstThreeOrbsBulletFirerate;
@@ -183,11 +191,23 @@ public class BossAI : MonoBehaviour
                         {
                             foreach (Transform transform in orbTransforms)
                             {
-                                ShootBullets(thirdOrbBulletAmount, bulletAngleSpread, transform, firstThreeOrbsBulletFirerate);
+                                ShootBullets(thirdOrbBulletAmount, bulletAngleSpread, transform, firstStageBulletSpeed);
                             }
 
                             firstStageBulletTimer = firstThreeOrbsBulletFirerate;
                         }
+
+                        if (firstStageHomingBulletTimer >= 0)
+                        {
+                            firstStageHomingBulletTimer -= Time.deltaTime;
+                        }
+                        else
+                        {
+                            ShootHomingBullet(1, bulletAngleSpread, transform, firstStageBulletSpeed);
+
+                            firstStageHomingBulletTimer = thirdOrbHomingBulletFirerate;
+                        }
+
 
                         break;
                     default:
@@ -212,6 +232,27 @@ public class BossAI : MonoBehaviour
         }
     }
 
+    public void DamageOrb(float damage,Transform orbTransform)
+    {
+        currentOrbHealth -= damage;
+        if (currentOrbHealth <= 0)
+        {
+            currentOrbHealth = maxOrbHealth;
+            
+            firstStage++;
+
+            orbTransforms.Remove(transform);
+            if (firstStage > BossAI.FirstStage.ThirdOrbDestroyed)
+            {
+                bossStage = BossAI.BossStages.SecondStage;
+            }
+
+            Transform orbTransformToDestroy = orbTransforms.Find(x => x == orbTransform);
+            orbTransforms.Remove(orbTransformToDestroy);
+            Destroy(orbTransformToDestroy.gameObject);
+        }
+    }
+
     private string AllOrbsShooting(float firstStageBulletSpeed)
     {
         throw new NotImplementedException();
@@ -222,9 +263,8 @@ public class BossAI : MonoBehaviour
         Vector2 aimingDirection = (Vector2)playerTransform.position - (Vector2)firingTransform.position;
 
         float angle = Mathf.Atan2(aimingDirection.y, aimingDirection.x) * Mathf.Rad2Deg;
-
+        
         Vector2 firingPos = firingTransform.position;
-
 
         if (bulletAmount > 1)
         {
@@ -233,25 +273,22 @@ public class BossAI : MonoBehaviour
             for (int i = 0; i < bulletAmount; i++)
             {
                 angleBulletAngleSpread += angleSpread;
+                float shootingAngle = angle + angleBulletAngleSpread;
 
+                GameObject bullet = Instantiate(bossBulletPrefab, firingPos, Quaternion.Euler(0, 0, shootingAngle - 90));
 
-                angle += angleBulletAngleSpread;
-
-                GameObject bullet = Instantiate(bossBulletPrefab, firingPos, Quaternion.identity);
-                bullet.transform.rotation = Quaternion.Euler(0,0,angle);
-                Debug.Log(bullet.transform.rotation);
-                bullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed;
+                bullet.GetComponent<BossBullet>().bulletSpeed = bulletSpeed;
             }
 
         }
         else
         {
-            GameObject bullet = Instantiate(bossBulletPrefab, firingPos, Quaternion.Euler(0, 0, angle));
-            bullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed;
+            GameObject bullet = Instantiate(bossBulletPrefab, firingPos, Quaternion.Euler(0, 0, angle -90));
+            bullet.GetComponent < BossBullet>().bulletSpeed = bulletSpeed;
         }
     }
     
-    void ShootHomingBullet(int bulletAmount, Transform firingTransform, float bulletSpeed)
+    void ShootHomingBullet(int bulletAmount, float angleSpread, Transform firingTransform, float bulletSpeed)
     {
 
         Vector2 aimingDirection = (Vector2)playerTransform.position - (Vector2)firingTransform.position;
@@ -260,9 +297,25 @@ public class BossAI : MonoBehaviour
 
         Vector2 firingPos = firingTransform.position;
 
-        for (int i = 0; i < bulletAmount; i++)
+        if (bulletAmount > 1)
         {
-            Instantiate(bossHomingBulletPrefab, firingPos, Quaternion.Euler(0,0,angle));
+            float angleBulletAngleSpread = (-(angleSpread * bulletAmount) * 0.5f) - angleSpread * 0.5f;
+
+            for (int i = 0; i < bulletAmount; i++)
+            {
+                angleBulletAngleSpread += angleSpread;
+                float shootingAngle = angle + angleBulletAngleSpread;
+
+                GameObject bullet = Instantiate(bossBulletPrefab, firingPos, Quaternion.Euler(0, 0, shootingAngle - 90));
+
+                bullet.GetComponent<BossHomingBullet>().bulletSpeed = bulletSpeed;
+            }
+
+        }
+        else
+        {
+            GameObject bullet = Instantiate(bossHomingBulletPrefab, firingPos, Quaternion.Euler(0, 0, angle));
+            //bullet.GetComponent<Bullet>().bulletSpeed = bulletSpeed;
         }
     }
 }

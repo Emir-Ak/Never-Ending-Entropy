@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3304252729302069852}
   - component: {fileID: 3304252729302069843}
   - component: {fileID: 3304252729302069842}
-  - component: {fileID: 6432422253564851122}
   - component: {fileID: 125540360891534175}
+  - component: {fileID: -1163848330649553379}
   m_Layer: 9
   m_Name: Boss Bullet
   m_TagString: Bullet
@@ -212,28 +212,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &6432422253564851122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3304252729302069840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99dd5eda0c1b6c2448d212aaebfa5d1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  toDisable:
-  - {fileID: 3304252729302069852}
-  - {fileID: 125540360891534175}
-  - {fileID: 3304252729302069842}
-  explosion: {fileID: 6509219267168621504, guid: 9758a1ede37956942bfd4d18f949456f,
-    type: 3}
-  damage: 20
-  destroyDelay: 5
-  rb: {fileID: 0}
-  bulletSpeed: 5
 --- !u!58 &125540360891534175
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -250,6 +228,28 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.7
+--- !u!114 &-1163848330649553379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3304252729302069840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54f5bf3b3c66fcd4b941c21f6df85b6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toDisable:
+  - {fileID: 3304252729302069852}
+  - {fileID: 125540360891534175}
+  - {fileID: 3304252729302069842}
+  explosion: {fileID: 6509219267168621504, guid: 9758a1ede37956942bfd4d18f949456f,
+    type: 3}
+  damage: 10
+  destroyDelay: 4
+  rb: {fileID: 0}
+  bulletSpeed: 5
 --- !u!1 &3304252729302403513
 GameObject:
   m_ObjectHideFlags: 0

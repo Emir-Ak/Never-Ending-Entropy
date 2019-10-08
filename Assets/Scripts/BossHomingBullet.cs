@@ -14,20 +14,25 @@ public class BossHomingBullet : MonoBehaviour
     public Transform target;
 
     Rigidbody2D rb;
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        target = FindObjectOfType<PlayerController>().transform;
+    }
     private void Start()
     {
-        Invoke("ResetVelocity",1);
+        rb.AddForce(transform.up * (bulletSpeed / 5),ForceMode2D.Impulse);
+        Invoke("ResetVelocity", 1);
     }
 
     void ResetVelocity()
     {
-        rb = GetComponent<Rigidbody2D>();
         rb.velocity = Vector2.zero;
         isHoming = true;
     }
-    private void Update()
+    private void FixedUpdate()
     {
-        if (isHoming = true)
+        if (isHoming == true)
         {
             moveDir = target.position;
             rb.position = Vector2.MoveTowards(transform.position, moveDir, bulletSpeed * Time.fixedDeltaTime);
