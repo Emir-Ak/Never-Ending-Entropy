@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adb84e30e02715445aeb9959894e3b4d, type: 3}
   m_Name: ColorGrading
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
@@ -52,14 +52,14 @@ MonoBehaviour:
     overrideState: 0
     value: 1
   temperature:
-    overrideState: 0
-    value: 0
+    overrideState: 1
+    value: -100
   tint:
     overrideState: 0
-    value: -30
+    value: 30
   colorFilter:
     overrideState: 0
-    value: {r: 1, g: 1, b: 1, a: 1}
+    value: {r: 0, g: 0.93958735, b: 1, a: 1}
   hueShift:
     overrideState: 0
     value: -180
@@ -71,7 +71,7 @@ MonoBehaviour:
     value: 0
   postExposure:
     overrideState: 0
-    value: 0
+    value: 1.49
   contrast:
     overrideState: 0
     value: 0
@@ -83,7 +83,7 @@ MonoBehaviour:
     value: 0
   mixerRedOutBlueIn:
     overrideState: 0
-    value: 0
+    value: -200
   mixerGreenOutRedIn:
     overrideState: 0
     value: 0
@@ -1323,7 +1323,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d65e486e4de6e5448a8fbb43dc8756a0, type: 3}
   m_Name: Grain
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   enabled:
     overrideState: 1
     value: 1
@@ -1332,13 +1332,13 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 0.424
+    value: 0.98
   size:
     overrideState: 1
-    value: 1.2
+    value: 1.44
   lumContrib:
     overrideState: 1
-    value: 0.604
+    value: 1
 --- !u!114 &-3703355807153812880
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -1361,7 +1361,7 @@ MonoBehaviour:
     defaultState: 1
   intensity:
     overrideState: 1
-    value: 0.25
+    value: 0.643
   fastMode:
     overrideState: 0
     value: 0
@@ -1383,7 +1383,7 @@ MonoBehaviour:
     value: 0
   intensity:
     overrideState: 1
-    value: 20
+    value: -19
   intensityX:
     overrideState: 0
     value: 1
@@ -1417,7 +1417,7 @@ MonoBehaviour:
     value: 1
   intensity:
     overrideState: 1
-    value: 6
+    value: 7
   threshold:
     overrideState: 1
     value: 0.6
@@ -1456,7 +1456,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e6292b2c06870d4495f009f912b9600, type: 3}
-  m_Name: Main Camera Profile
+  m_Name: TimeSlow
   m_EditorClassIdentifier: 
   settings:
   - {fileID: -3703355807153812880}
@@ -1492,10 +1492,10 @@ MonoBehaviour:
     value: {x: 0, y: 0}
   intensity:
     overrideState: 1
-    value: 0.418
+    value: 0.602
   smoothness:
     overrideState: 1
-    value: 0.78
+    value: 1
   roundness:
     overrideState: 0
     value: 0

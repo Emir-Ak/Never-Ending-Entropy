@@ -13,8 +13,7 @@ public class Door : MonoBehaviour
 
     [SerializeField]
     GameObject door;
-    Animator animator;
-
+    public bool blue;
     bool isOpen = false;
     private void Start()
     {
@@ -23,16 +22,16 @@ public class Door : MonoBehaviour
         switch (positioning)
         {
             case 1:
-                destination.x += 3.3f;
+                destination.x += 3;
                 break;
             case 2:
-                destination.x -= 3.3f;
+                destination.x -= 3;
                 break;
             case 3:
-                destination.y += 3.3f;
+                destination.y += 3;
                 break;
             case 4:
-                destination.y -= 3.3f;
+                destination.y -= 3;
                 break;
         }
 

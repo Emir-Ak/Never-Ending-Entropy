@@ -30,8 +30,7 @@ public class Bullet : MonoBehaviour
                         if (chaser.toAppear == false) 
                         chaser.toAppear = true;
 
-                    float rndDmg = Random.Range(damage - damage / 2.5f, damage + damage / 2.5f);
-                    chaser.GetDamage(rndDmg, transform.position);
+                    chaser.GetDamage(damage, transform.position);
                 }
 
                 foreach (Component obj in toDisable)

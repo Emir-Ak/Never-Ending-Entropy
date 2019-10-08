@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6361043835551394103}
   - component: {fileID: 6361043835551394102}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Corner_Stone (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -68,8 +68,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 68d8957bd98e4a54dab38f4b84787f05, type: 3}
+  m_SortingOrder: 11
+  m_Sprite: {fileID: 21300000, guid: b795ebb004760da4392fb0e3ac0fb8aa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -90,7 +90,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6361043836604924924}
   - component: {fileID: 6361043836604924927}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Corner_Stone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -128,7 +128,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -148,8 +148,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 68d8957bd98e4a54dab38f4b84787f05, type: 3}
+  m_SortingOrder: 11
+  m_Sprite: {fileID: 21300000, guid: b795ebb004760da4392fb0e3ac0fb8aa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -170,7 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6361043836677167828}
   - component: {fileID: 6361043836677167831}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +208,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -228,7 +228,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 3ba19250b4dbec249ba8f9d68fee7cae, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -251,8 +251,8 @@ GameObject:
   - component: {fileID: 6361043836794950172}
   - component: {fileID: 6361043836794950173}
   - component: {fileID: 6361043836794950178}
-  m_Layer: 0
-  m_Name: SideWall
+  m_Layer: 9
+  m_Name: Wall Width
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
