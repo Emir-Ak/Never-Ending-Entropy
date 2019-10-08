@@ -15,32 +15,38 @@ public class Chaser : MonoBehaviour
     public float followRange = 10f;
 
     [SerializeField]
-    GameObject blood;
-    [SerializeField]
-    GameObject mainBody;
+    GameController gameController;
 
     Vector2 moveDir;
     bool hasAttacked = false;
     Rigidbody2D rb;
+
+    float initialSpeed;
     private void Start()
     {
         animator = GetComponent<Animator>();
-        float rndSpeed = Random.Range(2.5f * moveSpeed, 3.5f * moveSpeed);
+        float rndSpeed = Random.Range(moveSpeed* 2.25f, 4f * moveSpeed);
         moveSpeed = rndSpeed;
         rb = GetComponent<Rigidbody2D>();
+        initialSpeed = moveSpeed;
     }
       
     private void Update()
     {
+        if (animator.speed != moveSpeed / initialSpeed)
+        {
+            animator.speed = moveSpeed / initialSpeed;
+        }
         if (!hasAttacked && moveDir != (Vector2)transform.position)
         {
             moveDir = target.position;
         }
-        RotateTowards(target.position);
+
 
         if (toAppear)
         {
             animator.SetBool("toAppear", true);
+        
         }
 
         if (Vector2.Distance(target.position, transform.position) > followRange && toFollow == true)
@@ -63,6 +69,7 @@ public class Chaser : MonoBehaviour
         if (toFollow)
         {
             Move();
+            RotateTowards(target.position);
         }
     }
     private void Move()
@@ -95,7 +102,7 @@ public class Chaser : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Player") && !hasAttacked)
+        if (collision.gameObject.CompareTag("Player") && !hasAttacked && gameController.timeActive)
         {
             PlayerController player = target.GetComponent<PlayerController>();
             player.ReceiveDamage(15f);
@@ -109,8 +116,8 @@ public class Chaser : MonoBehaviour
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
-        rb.velocity = Vector2.zero;
-
+        if (gameController.timeActive)
+            rb.velocity = Vector2.zero;      
     }
 
     void ResetAttack()

@@ -906,7 +906,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.13
+      value: 0.19
       mode: 0
       spread: 0
       speed:
@@ -1025,7 +1025,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 10
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -5073,7 +5073,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &5025729510383826545
 MonoBehaviour:
@@ -5092,8 +5092,7 @@ MonoBehaviour:
   toAppear: 0
   health: 100
   followRange: 20
-  blood: {fileID: 2760243983670710591, guid: 58a3af5ec5a69cd4d9ec548a6619c201, type: 3}
-  mainBody: {fileID: 5025729510669098310}
+  gameController: {fileID: 0}
 --- !u!58 &5025729510383826549
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5107,9 +5106,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -1.0751265, y: 1.6135426}
+  m_Offset: {x: -1.1447378, y: 1.6135426}
   serializedVersion: 2
-  m_Radius: 1.7299668
+  m_Radius: 2.3564644
 --- !u!1 &5025729510669098310
 GameObject:
   m_ObjectHideFlags: 0

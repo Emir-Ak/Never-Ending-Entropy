@@ -5,17 +5,22 @@ using UnityEngine;
 public class Hive : MonoBehaviour
 {
     Chaser[] chasers;
+    GameController gameController;
     private void Start()
     {
         chasers = GetComponentsInChildren<Chaser>();
+        gameController = FindObjectOfType<GameController>();
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("PlayerLight") || collision.CompareTag("Bullet"))
+        if (gameController.timeActive)
         {
-            foreach (Chaser chaser in chasers)
+            if (collision.CompareTag("PlayerLight") || collision.CompareTag("Bullet"))
             {
-                chaser.toAppear = true;
+                foreach (Chaser chaser in chasers)
+                {
+                    chaser.toAppear = true;
+                }
             }
         }
     }
